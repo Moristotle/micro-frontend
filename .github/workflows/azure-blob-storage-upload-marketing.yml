@@ -40,7 +40,6 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: production-files
-          version: latest
           path: ./dist
 
       - name: Azure login
