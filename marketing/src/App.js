@@ -5,7 +5,7 @@ import { StylesProvider } from "@material-ui/styles";
 import Landing from "./components/Landing";
 import Pricing from "./components/Pricing";
 
-// placeholder!!!!!!!!!
+// placeholder!!!!!!!!!!
 export default () => {
 	return (
 		<>

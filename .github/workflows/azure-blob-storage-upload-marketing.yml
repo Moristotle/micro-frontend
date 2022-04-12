@@ -58,6 +58,6 @@ jobs:
             az storage blob upload-batch --destination https://mdmicrofe.blob.core.windows.net/marketing --source ./production-files --connection-string $AZURE_STORAGE_CONNECTION_STRING
 
       - name: Azure logout
-        uses: azure/logout@v1
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+        run: |
+          az logout
+        shell: bash
