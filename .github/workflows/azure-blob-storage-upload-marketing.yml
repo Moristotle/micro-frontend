@@ -26,4 +26,3 @@ jobs:
           source_dir: /dist
           container_name: marketing
           connection_string: ${{ secrets.ConnectionString }}
-          sync: true
