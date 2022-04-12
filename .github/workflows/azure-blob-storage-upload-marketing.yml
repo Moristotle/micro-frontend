@@ -9,7 +9,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
+
+  -build-and-upload:
+    runs-on: ubuntu-latest
+        defaults:
       run:
         working-directory: marketing
     steps:
@@ -21,16 +24,9 @@ jobs:
           node-version: "14"
       - run: npm install
       - run: npm run build
-  upload:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: marketing
-    needs: build
-    steps:
       - uses: bacongobbler/azure-blob-storage-upload@main
         with:
-          source_dir: ${{jobs.build.steps.outputs.dist}}
+          source_dir: dist
           container_name: marketing
           connection_string: ${{ secrets.ConnectionString }}
           # WARNING: this will overwrite existing blobs in your blob storage
