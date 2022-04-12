@@ -26,5 +26,5 @@ jobs:
           source_dir: dist
           container_name: marketing
           connection_string: ${{ secrets.ConnectionString }}
-          # WARNING: this will overwrite existing blobs in your blob storage
           sync: true
+          extra_args: --destination-path dist
