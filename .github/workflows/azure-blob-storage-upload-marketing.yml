@@ -53,10 +53,12 @@ jobs:
 
       - name: Upload to Azure blob storage
         uses: azure/CLI@v1
+        env:
+          AZURE_STORAGE_CONNECTION_STRING: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
         with:
           azcliversion: 2.28.0
           inlineScript: |
-            az storage blob upload-batch --account-name mdmicrofe --destination https://mdmicrofe.blob.core.windows.net/marketing --source ./production-files --connection-string ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
+            az storage blob upload-batch --account-name mdmicrofe --destination https://mdmicrofe.blob.core.windows.net/marketing --source ./production-files --connection-string $AZURE_STORAGE_CONNECTION_STRING
 
       - name: Azure logout
         run: |
