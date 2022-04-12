@@ -23,6 +23,7 @@ jobs:
       - id: build
         run: npm install && npm run build
 
+      - name: Echo
       - run: echo ${{ steps.build.outputs.build_output}}
 
       - name: Upload to Azure Blob Storage
