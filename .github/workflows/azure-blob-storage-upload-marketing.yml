@@ -7,9 +7,6 @@ on:
       - marketing/**
       - .github/workflows/azure-blob-storage-upload-marketing.yml
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
   build-and-upload:
     runs-on: ubuntu-latest
     defaults:
@@ -24,7 +21,6 @@ jobs:
           node-version: "14"
       - run: npm install
       - run: npm run build
-
       - uses: bacongobbler/azure-blob-storage-upload@main
         with:
           source_dir: dist
