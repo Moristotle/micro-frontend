@@ -5,7 +5,7 @@ on:
       - main
     paths:
       - marketing/**
-      - .github/workflows/azure-static-web-apps-blue-cliff-0fcc74103
+      - .github/workflows/azure-blob-storage-upload-marketing.yml
 jobs:
   build:
     runs-on: ubuntu-latest
