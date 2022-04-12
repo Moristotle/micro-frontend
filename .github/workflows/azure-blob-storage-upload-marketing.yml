@@ -27,4 +27,4 @@ jobs:
           container_name: marketing
           connection_string: ${{ secrets.ConnectionString }}
           # WARNING: this will overwrite existing blobs in your blob storage
-          overwrite: "true"
+          sync: true
