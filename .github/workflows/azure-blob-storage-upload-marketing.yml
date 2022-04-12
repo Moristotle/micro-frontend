@@ -54,7 +54,7 @@ jobs:
       - name: Upload to Azure blob storage
         uses: azure/CLI@v1
         env:
-          AZURE_STORAGE_CONNECTION_STRING: ${{ secrets.AZURE_STORAGE_CONNECTION_KEY }}
+          AZURE_STORAGE_CONNECTION_KEY: ${{ secrets.AZURE_STORAGE_CONNECTION_KEY }}
         with:
           azcliversion: 2.28.0
           inlineScript: |
