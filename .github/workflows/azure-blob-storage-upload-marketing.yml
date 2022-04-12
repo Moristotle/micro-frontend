@@ -44,7 +44,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: production-files
-          path: ./marketing/dist
+          path: ./production-files
 
       - name: Azure login
         uses: azure/login@v1
@@ -56,7 +56,7 @@ jobs:
         with:
           azcliversion: 2.28.0
           inlineScript: |
-            az storage blob upload-batch --account-name mdmicrofe -d https://mdmicrofe.blob.core.windows.net/marketing -s ./production-files
+            az storage blob upload-batch --account-name mdmicrofe --destination https://mdmicrofe.blob.core.windows.net/marketing --source ./production-files
 
       - name: Azure logout
         run: |
