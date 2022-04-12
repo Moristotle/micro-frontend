@@ -21,7 +21,10 @@ jobs:
           node-version: "14"
       - name: Install & build
       - id: build
-        run: npm install && npm run build
+      - run: npm install && npm run build
+
+      - name: Echo
+      - run: echo ${{ steps.build.outputs.build_output}}
 
       - name: Upload to Azure Blob Storage
       - uses: bacongobbler/azure-blob-storage-upload@main
