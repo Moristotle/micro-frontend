@@ -35,9 +35,6 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     needs: [build-and-upload]
-    defaults:
-      run:
-        working-directory: marketing
 
     steps:
       - name: Download artifact
@@ -61,5 +58,6 @@ jobs:
             az storage blob upload-batch --destination https://mdmicrofe.blob.core.windows.net/marketing --source ./production-files --connection-string $AZURE_STORAGE_CONNECTION_STRING
 
       - name: Azure logout
-        run: |
-          az logout
+        uses: azure/logout@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
