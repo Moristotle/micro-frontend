@@ -23,7 +23,7 @@ jobs:
       - run: npm run build
       - uses: bacongobbler/azure-blob-storage-upload@main
         with:
-          source_dir: /dist
+          source_dir: /marketing/dist
           container_name: marketing
           connection_string: ${{ secrets.ConnectionString }}
           overwrite: true
