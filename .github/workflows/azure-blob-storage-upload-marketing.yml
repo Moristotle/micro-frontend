@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: marketing
+        working-directory: ./marketing
     steps:
       - uses: actions/checkout@v2
         with:
@@ -31,9 +31,12 @@ jobs:
           name: production-files
           path: ./dist
 
-  deploy:
+  download-and-deploy:
     name: Deploy
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./marketing
 
     steps:
       - name: Download artifact
