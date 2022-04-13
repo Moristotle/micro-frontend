@@ -36,6 +36,9 @@ jobs:
           app_location: "/container" # App source code path
           api_location: "/container/api" # Api source code path - optional
           output_location: "dist" # Built app content directory - optional
+        env:
+          # The following environment variables are required for the build to succeed.
+          PRODUCTION_DOMAIN: ${{ secrets.PRODUCTION_DOMAIN }}
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
