@@ -54,10 +54,11 @@ jobs:
           AZURE_STORAGE_CONNECTION_STRING: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
           AZURE_STORAGE_MARKETING_CONTAINER: ${{ secrets.AZURE_STORAGE_MARKETING_CONTAINER }}
           AZURE_STORAGE_KEY: ${{ secrets.AZURE_STORAGE_KEY }}
+          AZURE_STORAGE_ACCOUNT: ${{ secrets.AZURE_STORAGE_ACCOUNT }}
         with:
           azcliversion: 2.28.0
           inlineScript: |
-            az storage blob sync --destination $AZURE_STORAGE_MARKETING_CONTAINER --source ./production-files --account-key $AZURE_STORAGE_KEY --connection-string $AZURE_STORAGE_CONNECTION_STRING
+            az storage blob sync --container $AZURE_STORAGE_MARKETING_CONTAINER --account_name $AZURE_STORAGE_ACCOUNT --account-key $AZURE_STORAGE_KEY --source ./production-files
 
       - name: Purge CDN endpoint
         uses: azure/CLI@v1
