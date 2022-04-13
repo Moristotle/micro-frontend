@@ -1,9 +1,6 @@
-import React, { useRef, useEffect, Suspense, lazy } from "react";
+import React, { useRef, useEffect } from "react";
 import ReactDOM from "react-dom";
 export default () => {
-	const App = lazy(() => import("marketing/MarketingApp"));
-
-	/*
 	const ref = useRef(null);
 
 	useEffect(() => {
@@ -19,7 +16,5 @@ export default () => {
 			});
 	}, []);
 
-	*/
-
-	return <App />;
+	return <div ref={ref} />;
 };
