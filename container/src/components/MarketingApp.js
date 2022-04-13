@@ -1,10 +1,13 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, Suspense, lazy } from "react";
 import ReactDOM from "react-dom";
 export default () => {
+	const App = lazy(() => import("marketing/MarketingApp"));
+
+	/*
 	const ref = useRef(null);
 
 	useEffect(() => {
-		import("./marketing/MarketingApp")
+		import("marketing/MarketingApp")
 			.then((module) => {
 				module.mount(ref.current);
 			})
@@ -16,5 +19,7 @@ export default () => {
 			});
 	}, []);
 
-	return <div ref={ref} />;
+	*/
+
+	return <App />;
 };
