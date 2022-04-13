@@ -1,8 +1,8 @@
-# micro-frontend
+# Micro frontend demo
 Fiddling around with micro frontend architecture &amp; module federation
 
-> Container application (connecting the different micro apps) is hosted on Azure Static Web App, while the other apps are hosted on Azure Storage (served as static files). </br>
-> Orchestrating the communication between the different micro apps using module federation & Azure CDN.
+> The Container application (connecting the different micro apps) is hosted on Azure Static Web App, while the other apps are hosted on Azure Storage (served as static files). </br>
+> Orchestrating the communication between the different micro apps using tiered routing, module federation & Azure CDN.
 
 Stack:
 - React (incl. React Router)
