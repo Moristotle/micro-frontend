@@ -4,7 +4,7 @@ export default () => {
 	const ref = useRef(null);
 
 	useEffect(() => {
-		import("marketing/MarketingApp")
+		import("./marketing/MarketingApp")
 			.then((module) => {
 				module.mount(ref.current);
 			})
