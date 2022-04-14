@@ -22,10 +22,10 @@ export default ({ onSignIn }) => {
 				history.listen(onParentNavigate);
 			})
 			.catch((err) => {
-				console.error("Error loading marketing app", err);
+				console.error("Error loading Auth app", err);
 				ReactDOM.findDOMNode(
 					ref.current
-				).innerHTML = `<h2>Error loading marketing app</h2> `;
+				).innerHTML = `<h2>Error loading Auth app</h2> `;
 			});
 	}, []);
 
