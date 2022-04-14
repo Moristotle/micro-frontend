@@ -1,4 +1,4 @@
-name: Deploy Marketing App To Azure Blob Storage
+name: Deploy Auth App To Azure Blob Storage
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - auth/**
-      - .github/workflows/azure-blob-storage-marketing.yml
+      - .github/workflows/azure-blob-storage-auth.yml
 jobs:
   build-and-upload:
     runs-on: ubuntu-latest
